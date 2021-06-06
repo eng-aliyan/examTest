@@ -22,7 +22,7 @@ for items in cases:
 if isValid:
     print('password is valid')
 else:
-    print('password is not valid!!!')
+    print('password is invalid!!!')
 
 
 '''
