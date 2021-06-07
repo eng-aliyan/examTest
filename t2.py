@@ -2,8 +2,7 @@
 
 password = input('[i]: ')
 
-cases = [['$', '#', '@'], list(range(48, 58)), list(range(65, 91)), list(range(97, 123))]
-
+cases = [['$', '#', '@'], range(48, 58), range(65, 91), range(97, 123)]
 
 isValid = True
 if len(password) < 6 or len(password) > 16:
