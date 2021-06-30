@@ -1,6 +1,4 @@
-#!/usr/bin/python3
-
-word = input('[i]: ')
+word = input()
 
 word = word[::-1]
 

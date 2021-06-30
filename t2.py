@@ -1,69 +1,41 @@
-#!/usr/bin/python3
+passwd = input()
 
-password = input('[i]: ')
+uppers = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
-cases = [['$', '#', '@'], range(48, 58), range(65, 91), range(97, 123)]
+lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
-isValid = True
-if len(password) < 6 or len(password) > 16:
-    isValid = False
+nums = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
-for items in cases:
-    passed = False
-    for c in items:
-        if ('%c' %c) in password:
-            passed = True
-            break
-    if not passed:
-        isValid = False
-        break
+cases = ["$", "#", "@"]
+
+inRange = True
+if len(passwd) < 6 or len(passwd) > 16:
+    inRange = False
+
+isUpper = False
+for item in uppers:
+    if item in passwd:
+        isUpper = True
+        
+isLower = False
+for item in lower:
+    if item in passwd:
+        isLower = True
+        
+isNum = False
+for item in nums:
+    if item in passwd:
+        isNum = True
+        
+isCases = False
+for item in cases:
+    if item in passwd:
+        isCases = True
+
+isValid = inRange and isUpper and isLower and isNum and isCases
 
 if isValid:
-    print('password is valid')
+    print("passwd is valid")
 else:
-    print('password is invalid!!!')
+    print("passwd is invalid")
 
-
-'''
-if isValid:
-    isUpper = False
-    for i in range(65, 91):
-        if ('%c' %i) in password:
-            isUpper = True
-            break
-    if not isUpper:
-        isValid = False
-
-if isValid:
-    isLower = False
-    for i in range(97, 123):
-        if ('%c' %i) in password:
-            isLower = True
-            break
-    if not isLower:
-        isValid = False
-
-if isValid:
-    isNumeric = False
-    for i in range(48, 58):
-        if ('%c' %i) in password:
-            isNumeric = True
-            break
-    if not isNumeric:
-        isValid = False
-
-if isValid:
-    isChar = False
-    chars = ['$', '#', '@']
-    for i in chars:
-        if i in password:
-            isChar = True
-            break
-    if not isChar:
-        isValid = False
-
-if isValid:
-    print('password is valid')
-else:
-    print('password is not valid!!!')
-'''

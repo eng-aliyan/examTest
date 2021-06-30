@@ -1,9 +1,7 @@
-#!/usr/bin/python3
-
 inNumbers = []
 for i in range(10):
-    n = input('[i-int-%d]: ' %(i+1))
-    inNumbers.append(int(n))
+    n = int(input())
+    inNumbers.append()
 
 squares = []
 for i in inNumbers:
