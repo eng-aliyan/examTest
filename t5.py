@@ -1,5 +1,3 @@
-import math
-
 inNumbers = []
 for i in range(10):
     n = int(input())
@@ -7,11 +5,11 @@ for i in range(10):
 
 squares = []
 for i in inNumbers:
-    squares.append(math.pow(i, 2))
+    squares.append(i**2)
 
 sqNumbers = {}
 for i in range(10):
     num = inNumbers[i]
-    sqNumbers[num] = int(math.pow(num, 3))
+    sqNumbers[num] = num**3
 
 print(sqNumbers)
